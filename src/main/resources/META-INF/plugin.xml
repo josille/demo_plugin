@@ -199,15 +199,13 @@
             <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
         </action>
 
-        <!-- todo: Refactoring submenu in Project view -->
-        <!--
+        <!-- Project View Context Menu - Right-click menu in project tree - Inside Renaming and Refactoring group -->
         <action id="org.example.demo_plugin.ProjectViewPopupMenuRefactoringAction"
                 class="org.example.demo_plugin.context.ProjectViewPopupMenuRefactoringAction"
                 text="(Rodrigo) Project View Refactoring Action"
                 description="Action in project view right-click menu - Refactoring submenu">
             <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="last"/>
         </action>
-        -->
 
         <!-- todo: Modify submenu in Project view -->
         <!--
