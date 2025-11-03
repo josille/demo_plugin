@@ -226,7 +226,7 @@
         <!-- ========== TOOLBAR GROUPS ========== -->
 
         <!-- Main Toolbar - Top toolbar with common actions  (OldUI) -->
-        <!-- NOT WORKING -->
+        <!-- NOT WORKING OLD UI -->
         <action id="org.example.demo_plugin.MainToolBarAction"
                 class="org.example.demo_plugin.toolbar.MainToolBarAction"
                 text="(Rodrigo) Main Toolbar Action"
@@ -235,8 +235,7 @@
             <add-to-group group-id="MainToolBar" anchor="last"/>
         </action>
 
-        <!-- todo: Left side of main toolbar (new UI) -->
-        <!--
+        <!-- Main Toolbar - Top toolbar with common actions Left -->
         <action id="org.example.demo_plugin.MainToolbarLeftAction"
                 class="org.example.demo_plugin.toolbar.MainToolbarLeftAction"
                 text="(Rodrigo) Main Toolbar Left Action"
@@ -244,10 +243,9 @@
                 icon="AllIcons.General.Information">
             <add-to-group group-id="MainToolbarLeft" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: Center of main toolbar (new UI) -->
-        <!--
+
+        <!-- Main Toolbar - Top toolbar with common actions Center -->
         <action id="org.example.demo_plugin.MainToolbarCenterAction"
                 class="org.example.demo_plugin.toolbar.MainToolbarCenterAction"
                 text="(Rodrigo) Main Toolbar Center Action"
@@ -255,10 +253,8 @@
                 icon="AllIcons.General.Information">
             <add-to-group group-id="MainToolbarCenter" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: Right side of main toolbar (new UI) -->
-        <!--
+        <!-- Main Toolbar - Top toolbar with common actions Right -->
         <action id="org.example.demo_plugin.MainToolbarRightAction"
                 class="org.example.demo_plugin.toolbar.MainToolbarRightAction"
                 text="(Rodrigo) Main Toolbar Right Action"
@@ -266,7 +262,6 @@
                 icon="AllIcons.General.Information">
             <add-to-group group-id="MainToolbarRight" anchor="last"/>
         </action>
-        -->
 
         <!-- Navigation Bar Toolbar - Toolbar in navigation bar -->
         <action id="org.example.demo_plugin.NavBarToolBarAction"
