@@ -8,14 +8,11 @@
     <name>Demo_plugin</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://www.test.com">Your Company</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
-    <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
-    ]]></description>
+    <description>Demo plugint to show all locatiosn for plgins</description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -30,7 +27,16 @@
         <!-- ========== MAIN MENU GROUPS ========== -->
 
         <!-- File Menu - Common file operations like New, Open, Save, Close -->
+<!-- todo
+        <action id="com.example.demo_plugin.MainMenuAction"
+                class="com.example.demo_plugin.main_menu.FileMenuAction"
+                text="(Rodrigo) Main Menu Action"
+                description="Action in Main menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+        </action>
+        -->
 
+        <!-- File Menu - Common file operations like New, Open, Save, Close -->
         <action id="com.example.demo_plugin.FileMenuAction"
                 class="com.example.demo_plugin.main_menu.FileMenuAction"
                 text="(Rodrigo) File Menu Action"
@@ -146,15 +152,25 @@
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
 
-
-        <!-- Project View Context Menu - Right-click menu in project tree -->
-        <action id="com.example.demo_plugin.ProjectViewPopupMenuAction"
-                class="com.example.demo_plugin.context.ProjectViewPopupMenuAction"
-                text="(Rodrigo) Project View Context Action"
-                description="Action in project view right-click menu">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        <!-- todo: Run submenu in editor context menu -->
+        <!--
+        <action id="com.example.demo_plugin.EditorPopupMenuRunAction"
+                class="com.example.demo_plugin.context.EditorPopupMenuRunAction"
+                text="(Rodrigo) Editor Run Context Action"
+                description="Action in editor right-click menu - Run submenu">
+            <add-to-group group-id="EditorPopupMenu.Run" anchor="last"/>
         </action>
+        -->
 
+        <!-- todo: Go To submenu in editor context menu -->
+        <!--
+        <action id="com.example.demo_plugin.EditorPopupMenuGoToAction"
+                class="com.example.demo_plugin.context.EditorPopupMenuGoToAction"
+                text="(Rodrigo) Editor GoTo Context Action"
+                description="Action in editor right-click menu - GoTo submenu">
+            <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"/>
+        </action>
+        -->
 
         <!-- Editor Tab Context Menu - Right-click menu on editor tabs -->
         <action id="com.example.demo_plugin.EditorTabPopupMenuAction"
@@ -192,9 +208,49 @@
         </action>
         -->
 
+        <!-- ========== PROJECT VIEW CONTEXT MENU GROUPS ========== -->
+
+        <!-- Project View Context Menu - Right-click menu in project tree -->
+        <action id="com.example.demo_plugin.ProjectViewPopupMenuAction"
+                class="com.example.demo_plugin.context.ProjectViewPopupMenuAction"
+                text="(Rodrigo) Project View Context Action"
+                description="Action in project view right-click menu">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+
+        <!-- todo: Refactoring submenu in Project view -->
+        <!--
+        <action id="com.example.demo_plugin.ProjectViewPopupMenuRefactoringAction"
+                class="com.example.demo_plugin.context.ProjectViewPopupMenuRefactoringAction"
+                text="(Rodrigo) Project View Refactoring Action"
+                description="Action in project view right-click menu - Refactoring submenu">
+            <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Modify submenu in Project view -->
+        <!--
+        <action id="com.example.demo_plugin.ProjectViewPopupMenuModifyAction"
+                class="com.example.demo_plugin.context.ProjectViewPopupMenuModifyAction"
+                text="(Rodrigo) Project View Modify Action"
+                description="Action in project view right-click menu - Modify submenu">
+            <add-to-group group-id="ProjectViewPopupMenuModifyGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Run submenu in Project view -->
+        <!--
+        <action id="com.example.demo_plugin.ProjectViewPopupMenuRunAction"
+                class="com.example.demo_plugin.context.ProjectViewPopupMenuRunAction"
+                text="(Rodrigo) Project View Run Action"
+                description="Action in project view right-click menu - Run submenu">
+            <add-to-group group-id="ProjectViewPopupMenuRunGroup" anchor="last"/>
+        </action>
+        -->
+
         <!-- ========== TOOLBAR GROUPS ========== -->
 
-        <!-- Main Toolbar - Top toolbar with common actions -->
+        <!-- Main Toolbar - Top toolbar with common actions  (OldUI) -->
         <!-- NOT WORKING -->
         <action id="com.example.demo_plugin.MainToolBarAction"
                 class="com.example.demo_plugin.toolbar.MainToolBarAction"
@@ -204,6 +260,39 @@
             <add-to-group group-id="MainToolBar" anchor="last"/>
         </action>
 
+        <!-- todo: Left side of main toolbar (new UI) -->
+        <!--
+        <action id="com.example.demo_plugin.MainToolbarLeftAction"
+                class="com.example.demo_plugin.toolbar.MainToolbarLeftAction"
+                text="(Rodrigo) Main Toolbar Left Action"
+                description="Action in main toolbar left side (new UI)"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="MainToolbarLeft" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Center of main toolbar (new UI) -->
+        <!--
+        <action id="com.example.demo_plugin.MainToolbarCenterAction"
+                class="com.example.demo_plugin.toolbar.MainToolbarCenterAction"
+                text="(Rodrigo) Main Toolbar Center Action"
+                description="Action in main toolbar center (new UI)"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="MainToolbarCenter" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Right side of main toolbar (new UI) -->
+        <!--
+        <action id="com.example.demo_plugin.MainToolbarRightAction"
+                class="com.example.demo_plugin.toolbar.MainToolbarRightAction"
+                text="(Rodrigo) Main Toolbar Right Action"
+                description="Action in main toolbar right side (new UI)"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="MainToolbarRight" anchor="last"/>
+        </action>
+        -->
+
         <!-- Navigation Bar Toolbar - Toolbar in navigation bar -->
         <action id="com.example.demo_plugin.NavBarToolBarAction"
                 class="com.example.demo_plugin.toolbar.NavBarToolBarAction"
@@ -212,6 +301,17 @@
                 icon="AllIcons.General.Information">
             <add-to-group group-id="NavBarToolBar" anchor="last"/>
         </action>
+
+        <!-- todo: Run widget toolbar (old UI) -->
+        <!--
+        <action id="com.example.demo_plugin.ToolbarRunGroupAction"
+                class="com.example.demo_plugin.toolbar.ToolbarRunGroupAction"
+                text="(Rodrigo) Toolbar Run Action"
+                description="Action in run widget toolbar (old UI)"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+        </action>
+        -->
 
         <!-- Editor Gutter Menu - Left margin gutter context menu -->
         <!-- NOT FOUND
@@ -223,7 +323,7 @@
         </action>
         -->
 
-        <!-- ========== SUBMENU GROUPS ========== -->
+        <!-- ========== SUBMENU GROUPS (Additional Context Menus) ========== -->
 
         <!-- New Submenu - File > New submenu for creating new files -->
         <action id="com.example.demo_plugin.NewGroupAction"
@@ -232,6 +332,56 @@
                 description="Action in File > New submenu">
             <add-to-group group-id="NewGroup" anchor="last"/>
         </action>
+
+        <!-- todo: CutCopyPasteGroup - Cut/Copy/Paste group -->
+        <!--
+        <action id="com.example.demo_plugin.CutCopyPasteGroupAction"
+                class="com.example.demo_plugin.submenu.CutCopyPasteGroupAction"
+                text="(Rodrigo) Cut/Copy/Paste Action"
+                description="Action in Cut/Copy/Paste group">
+            <add-to-group group-id="CutCopyPasteGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: StructureViewPopupMenu - Structure view context menu -->
+        <!--
+        <action id="com.example.demo_plugin.StructureViewPopupMenuAction"
+                class="com.example.demo_plugin.submenu.StructureViewPopupMenuAction"
+                text="(Rodrigo) Structure View Action"
+                description="Action in structure view context menu">
+            <add-to-group group-id="StructureViewPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Diff.EditorPopupMenu - Diff editor context menu -->
+        <!--
+        <action id="com.example.demo_plugin.DiffEditorPopupMenuAction"
+                class="com.example.demo_plugin.submenu.DiffEditorPopupMenuAction"
+                text="(Rodrigo) Diff Editor Action"
+                description="Action in diff editor context menu">
+            <add-to-group group-id="Diff.EditorPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Diff.EditorGutterPopupMenu - Diff editor gutter context menu -->
+        <!--
+        <action id="com.example.demo_plugin.DiffEditorGutterPopupMenuAction"
+                class="com.example.demo_plugin.submenu.DiffEditorGutterPopupMenuAction"
+                text="(Rodrigo) Diff Editor Gutter Action"
+                description="Action in diff editor gutter context menu">
+            <add-to-group group-id="Diff.EditorGutterPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Diff.ViewerPopupMenu - Diff viewer context menu -->
+        <!--
+        <action id="com.example.demo_plugin.DiffViewerPopupMenuAction"
+                class="com.example.demo_plugin.submenu.DiffViewerPopupMenuAction"
+                text="(Rodrigo) Diff Viewer Action"
+                description="Action in diff viewer context menu">
+            <add-to-group group-id="Diff.ViewerPopupMenu" anchor="last"/>
+        </action>
+        -->
 
         <!-- Open Editor Submenu - File > Open submenu -->
         <!-- NOT FOUND
@@ -338,5 +488,342 @@
             <add-to-group group-id="ToolsMenu" anchor="before" relative-to-action="ExternalToolsGroup"/>
         </action>
         -->
+
+        <!-- ========== Tool Window Menus ========== -->
+
+        <!-- todo: ChangesViewPopupMenu - Changes view (VCS) context menu -->
+        <!--
+        <action id="com.example.demo_plugin.ChangesViewPopupMenuAction"
+                class="com.example.demo_plugin.toolwindow.ChangesViewPopupMenuAction"
+                text="(Rodrigo) Changes View Action"
+                description="Action in changes view context menu">
+            <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: ChangesView.AddUnversioned - Add unversioned files in Changes view -->
+        <!--
+        <action id="com.example.demo_plugin.ChangesViewAddUnversionedAction"
+                class="com.example.demo_plugin.toolwindow.ChangesViewAddUnversionedAction"
+                text="(Rodrigo) Changes View Add Unversioned Action"
+                description="Action for adding unversioned files in changes view">
+            <add-to-group group-id="ChangesView.AddUnversioned" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Vcs.FileHistory.ContextMenu - File history context menu -->
+        <!--
+        <action id="com.example.demo_plugin.VcsFileHistoryContextMenuAction"
+                class="com.example.demo_plugin.toolwindow.VcsFileHistoryContextMenuAction"
+                text="(Rodrigo) VCS File History Action"
+                description="Action in VCS file history context menu">
+            <add-to-group group-id="Vcs.FileHistory.ContextMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Vcs.Log.ContextMenu - VCS log context menu -->
+        <!--
+        <action id="com.example.demo_plugin.VcsLogContextMenuAction"
+                class="com.example.demo_plugin.toolwindow.VcsLogContextMenuAction"
+                text="(Rodrigo) VCS Log Action"
+                description="Action in VCS log context menu">
+            <add-to-group group-id="Vcs.Log.ContextMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== OTHER ========== -->
+
+        <!-- todo: SearchEverywhereToolbar - Search Everywhere toolbar -->
+        <!--
+        <action id="com.example.demo_plugin.SearchEverywhereToolbarAction"
+                class="com.example.demo_plugin.other.SearchEverywhereToolbarAction"
+                text="(Rodrigo) Search Everywhere Action"
+                description="Action in search everywhere toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="SearchEverywhereToolbar" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: RunnerActions - Runner actions group -->
+        <!--
+        <action id="com.example.demo_plugin.RunnerActionsAction"
+                class="com.example.demo_plugin.other.RunnerActionsAction"
+                text="(Rodrigo) Runner Action"
+                description="Action in runner actions group">
+            <add-to-group group-id="RunnerActions" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: TouchBarDefault - macOS Touch Bar default actions -->
+        <!--
+        <action id="com.example.demo_plugin.TouchBarDefaultAction"
+                class="com.example.demo_plugin.other.TouchBarDefaultAction"
+                text="(Rodrigo) Touch Bar Action"
+                description="Action in macOS Touch Bar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="TouchBarDefault" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: WelcomeScreen.QuickStart - Welcome screen quick start actions -->
+        <!--
+        <action id="com.example.demo_plugin.WelcomeScreenQuickStartAction"
+                class="com.example.demo_plugin.other.WelcomeScreenQuickStartAction"
+                text="(Rodrigo) Welcome Screen Quick Start Action"
+                description="Action in welcome screen quick start">
+            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== ADDITIONAL TOOL WINDOW POPUP MENUS ========== -->
+
+        <!-- todo: BookmarksToolWindowPopupMenu - Bookmarks tool window context menu -->
+        <!--
+        <action id="com.example.demo_plugin.BookmarksToolWindowPopupMenuAction"
+                class="com.example.demo_plugin.toolwindow.BookmarksToolWindowPopupMenuAction"
+                text="(Rodrigo) Bookmarks Tool Window Action"
+                description="Action in bookmarks tool window context menu">
+            <add-to-group group-id="BookmarksToolWindowPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: FavoritesViewPopupMenu - Favorites view context menu -->
+        <!--
+        <action id="com.example.demo_plugin.FavoritesViewPopupMenuAction"
+                class="com.example.demo_plugin.toolwindow.FavoritesViewPopupMenuAction"
+                text="(Rodrigo) Favorites View Action"
+                description="Action in favorites view context menu">
+            <add-to-group group-id="FavoritesViewPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: ScopeViewPopupMenu - Scope view context menu -->
+        <!--
+        <action id="com.example.demo_plugin.ScopeViewPopupMenuAction"
+                class="com.example.demo_plugin.toolwindow.ScopeViewPopupMenuAction"
+                text="(Rodrigo) Scope View Action"
+                description="Action in scope view context menu">
+            <add-to-group group-id="ScopeViewPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: TodoViewPopupMenu - TODO tool window context menu -->
+        <!--
+        <action id="com.example.demo_plugin.TodoViewPopupMenuAction"
+                class="com.example.demo_plugin.toolwindow.TodoViewPopupMenuAction"
+                text="(Rodrigo) TODO View Action"
+                description="Action in TODO tool window context menu">
+            <add-to-group group-id="TodoViewPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: ProblemsView.ToolWindow - Problems tool window context menu -->
+        <!--
+        <action id="com.example.demo_plugin.ProblemsViewToolWindowAction"
+                class="com.example.demo_plugin.toolwindow.ProblemsViewToolWindowAction"
+                text="(Rodrigo) Problems View Action"
+                description="Action in problems tool window">
+            <add-to-group group-id="ProblemsView.ToolWindow" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: TestTreePopupMenu - Test results tree context menu -->
+        <!--
+        <action id="com.example.demo_plugin.TestTreePopupMenuAction"
+                class="com.example.demo_plugin.toolwindow.TestTreePopupMenuAction"
+                text="(Rodrigo) Test Tree Action"
+                description="Action in test tree context menu">
+            <add-to-group group-id="TestTreePopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== DEBUGGER AND RUN CONFIGURATION MENUS ========== -->
+
+        <!-- todo: DebuggerActions - Debugger toolbar and menu actions -->
+        <!--
+        <action id="com.example.demo_plugin.DebuggerActionsAction"
+                class="com.example.demo_plugin.debug.DebuggerActionsAction"
+                text="(Rodrigo) Debugger Action"
+                description="Action in debugger toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="DebuggerActions" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: XDebugger.ToolWindow.TopToolbar - Debug tool window top toolbar -->
+        <!--
+        <action id="com.example.demo_plugin.XDebuggerTopToolbarAction"
+                class="com.example.demo_plugin.debug.XDebuggerTopToolbarAction"
+                text="(Rodrigo) Debug Top Toolbar Action"
+                description="Action in debug tool window top toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="XDebugger.ToolWindow.TopToolbar" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: XDebugger.Watches.Tree.Popup - Debug watches tree context menu -->
+        <!--
+        <action id="com.example.demo_plugin.XDebuggerWatchesTreePopupAction"
+                class="com.example.demo_plugin.debug.XDebuggerWatchesTreePopupAction"
+                text="(Rodrigo) Debug Watches Action"
+                description="Action in debug watches tree context menu">
+            <add-to-group group-id="XDebugger.Watches.Tree.Popup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: XDebugger.Frames.Tree.Popup - Debug frames tree context menu -->
+        <!--
+        <action id="com.example.demo_plugin.XDebuggerFramesTreePopupAction"
+                class="com.example.demo_plugin.debug.XDebuggerFramesTreePopupAction"
+                text="(Rodrigo) Debug Frames Action"
+                description="Action in debug frames tree context menu">
+            <add-to-group group-id="XDebugger.Frames.Tree.Popup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: RunContextPopupGroup - Run configuration context menu -->
+        <!--
+        <action id="com.example.demo_plugin.RunContextPopupGroupAction"
+                class="com.example.demo_plugin.debug.RunContextPopupGroupAction"
+                text="(Rodrigo) Run Context Action"
+                description="Action in run configuration context menu">
+            <add-to-group group-id="RunContextPopupGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== ANALYZE AND FIND MENUS ========== -->
+
+        <!-- todo: AnalyzeMenu - Analyze menu in main menu bar -->
+        <!--
+        <action id="com.example.demo_plugin.AnalyzeMenuAction"
+                class="com.example.demo_plugin.main_menu.AnalyzeMenuAction"
+                text="(Rodrigo) Analyze Menu Action"
+                description="Action in Analyze menu">
+            <add-to-group group-id="AnalyzeMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: FindMenuGroup - Find submenu in Edit menu -->
+        <!--
+        <action id="com.example.demo_plugin.FindMenuGroupAction"
+                class="com.example.demo_plugin.main_menu.FindMenuGroupAction"
+                text="(Rodrigo) Find Menu Action"
+                description="Action in Edit > Find submenu">
+            <add-to-group group-id="FindMenuGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== ADDITIONAL EDITOR MENUS ========== -->
+
+        <!-- todo: EditorLangPopupMenu - Language-specific editor context menu -->
+        <!--
+        <action id="com.example.demo_plugin.EditorLangPopupMenuAction"
+                class="com.example.demo_plugin.context.EditorLangPopupMenuAction"
+                text="(Rodrigo) Editor Language Action"
+                description="Action in language-specific editor context menu">
+            <add-to-group group-id="EditorLangPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: EditorGutterPopupMenu - Editor gutter context menu (line numbers area) -->
+        <!--
+        <action id="com.example.demo_plugin.EditorGutterPopupMenuAction"
+                class="com.example.demo_plugin.context.EditorGutterPopupMenuAction"
+                text="(Rodrigo) Editor Gutter Action"
+                description="Action in editor gutter context menu">
+            <add-to-group group-id="EditorGutterPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: EditorToggleActions - Editor toggle actions (like word wrap, soft wrap) -->
+        <!--
+        <action id="com.example.demo_plugin.EditorToggleActionsAction"
+                class="com.example.demo_plugin.context.EditorToggleActionsAction"
+                text="(Rodrigo) Editor Toggle Action"
+                description="Action in editor toggle actions group">
+            <add-to-group group-id="EditorToggleActions" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== TERMINAL AND OUTPUT WINDOWS ========== -->
+
+        <!-- todo: Terminal.Toolbar - Terminal tool window toolbar -->
+        <!--
+        <action id="com.example.demo_plugin.TerminalToolbarAction"
+                class="com.example.demo_plugin.toolwindow.TerminalToolbarAction"
+                text="(Rodrigo) Terminal Toolbar Action"
+                description="Action in terminal toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="Terminal.Toolbar" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Terminal.ContextMenu - Terminal context menu -->
+        <!--
+        <action id="com.example.demo_plugin.TerminalContextMenuAction"
+                class="com.example.demo_plugin.toolwindow.TerminalContextMenuAction"
+                text="(Rodrigo) Terminal Context Action"
+                description="Action in terminal context menu">
+            <add-to-group group-id="Terminal.ContextMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== BUILD AND GRADLE TOOL WINDOWS ========== -->
+
+        <!-- todo: BuildMenu.Group - Build menu group -->
+        <!--
+        <action id="com.example.demo_plugin.BuildMenuGroupAction"
+                class="com.example.demo_plugin.main_menu.BuildMenuGroupAction"
+                text="(Rodrigo) Build Menu Group Action"
+                description="Action in Build menu group">
+            <add-to-group group-id="BuildMenu.Group" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: Gradle.View.ToolbarActions - Gradle tool window toolbar -->
+        <!--
+        <action id="com.example.demo_plugin.GradleViewToolbarAction"
+                class="com.example.demo_plugin.toolwindow.GradleViewToolbarAction"
+                text="(Rodrigo) Gradle Toolbar Action"
+                description="Action in Gradle tool window toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="Gradle.View.ToolbarActions" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== EXTERNAL TOOLS AND MACROS ========== -->
+
+        <!-- todo: ExternalToolsGroup - External Tools submenu in Tools menu -->
+        <!--
+        <action id="com.example.demo_plugin.ExternalToolsGroupAction"
+                class="com.example.demo_plugin.main_menu.ExternalToolsGroupAction"
+                text="(Rodrigo) External Tools Action"
+                description="Action in Tools > External Tools submenu">
+            <add-to-group group-id="ExternalToolsGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- todo: MacrosGroup - Macros submenu in Edit menu -->
+        <!--
+        <action id="com.example.demo_plugin.MacrosGroupAction"
+                class="com.example.demo_plugin.main_menu.MacrosGroupAction"
+                text="(Rodrigo) Macros Action"
+                description="Action in Edit > Macros submenu">
+            <add-to-group group-id="MacrosGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== NOTIFICATIONS AND EVENTS ========== -->
+
+        <!-- todo: Notifications.ToolWindow - Notifications tool window -->
+        <!--
+        <action id="com.example.demo_plugin.NotificationsToolWindowAction"
+                class="com.example.demo_plugin.toolwindow.NotificationsToolWindowAction"
+                text="(Rodrigo) Notifications Action"
+                description="Action in notifications tool window">
+            <add-to-group group-id="Notifications.ToolWindow" anchor="last"/>
+        </action>
+        -->
+
     </actions>
 </idea-plugin>
