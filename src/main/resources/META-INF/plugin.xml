@@ -207,25 +207,21 @@
             <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="last"/>
         </action>
 
-        <!-- todo: Modify submenu in Project view -->
-        <!--
+        <!-- Project View Context Menu - Right-click menu in project tree - Inside Project View group -->
         <action id="org.example.demo_plugin.ProjectViewPopupMenuModifyAction"
                 class="org.example.demo_plugin.context.ProjectViewPopupMenuModifyAction"
                 text="(Rodrigo) Project View Modify Action"
                 description="Action in project view right-click menu - Modify submenu">
             <add-to-group group-id="ProjectViewPopupMenuModifyGroup" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: Run submenu in Project view -->
-        <!--
+        <!-- Project View Context Menu - Right-click menu in project tree - Inside Project Run group -->
         <action id="org.example.demo_plugin.ProjectViewPopupMenuRunAction"
                 class="org.example.demo_plugin.context.ProjectViewPopupMenuRunAction"
                 text="(Rodrigo) Project View Run Action"
                 description="Action in project view right-click menu - Run submenu">
             <add-to-group group-id="ProjectViewPopupMenuRunGroup" anchor="last"/>
         </action>
-        -->
 
         <!-- ========== TOOLBAR GROUPS ========== -->
 
