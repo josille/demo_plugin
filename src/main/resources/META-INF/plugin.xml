@@ -1,0 +1,342 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.example.demo_plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>Demo_plugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        Enter short description for your plugin here.<br>
+        <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <!-- ========== MAIN MENU GROUPS ========== -->
+
+        <!-- File Menu - Common file operations like New, Open, Save, Close -->
+
+        <action id="com.example.demo_plugin.FileMenuAction"
+                class="com.example.demo_plugin.main_menu.FileMenuAction"
+                text="(Rodrigo) File Menu Action"
+                description="Action in File menu">
+            <add-to-group group-id="FileMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Edit Menu - Text editing operations like Cut, Copy, Paste, Find -->
+        <action id="com.example.demo_plugin.EditMenuAction"
+                class="com.example.demo_plugin.main_menu.EditMenuAction"
+                text="(Rodrigo) Edit Menu Action"
+                description="Action in Edit menu">
+            <add-to-group group-id="EditMenu" anchor="last"/>
+        </action>
+
+
+        <!-- View Menu - UI view options like Tool Windows, Appearance -->
+        <action id="com.example.demo_plugin.ViewMenuAction"
+                class="com.example.demo_plugin.main_menu.ViewMenuAction"
+                text="(Rodrigo) View Menu Action"
+                description="Action in View menu">
+            <add-to-group group-id="ViewMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Navigate Menu - Code navigation like Go to Class, File, Symbol -->
+        <action id="com.example.demo_plugin.GoToMenuAction"
+                class="com.example.demo_plugin.main_menu.GoToMenuAction"
+                text="(Rodrigo) Go to Menu Action"
+                description="Action in Go to menu">
+            <add-to-group group-id="GoToMenu" anchor="last"/>
+        </action>
+
+        <!-- Code Menu - Code generation and analysis like Generate, Reformat -->
+        <action id="com.example.demo_plugin.CodeMenuAction"
+                class="com.example.demo_plugin.main_menu.CodeMenuAction"
+                text="(Rodrigo) Code Menu Action"
+                description="Action in Code menu">
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Refactoring Menu - Code refactoring operations like Rename, Extract -->
+        <action id="com.example.demo_plugin.RefactoringMenuAction"
+                class="com.example.demo_plugin.main_menu.RefactoringMenuAction"
+                text="(Rodrigo) Refactoring Menu Action"
+                description="Action in Refactor menu">
+            <add-to-group group-id="RefactoringMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Build Menu - Project build operations like Build Project, Clean -->
+        <action id="com.example.demo_plugin.BuildMenuAction"
+                class="com.example.demo_plugin.main_menu.BuildMenuAction"
+                text="(Rodrigo) Build Menu Action"
+                description="Action in Build menu">
+            <add-to-group group-id="BuildMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Run Menu - Run and debug operations like Run, Debug, Stop -->
+        <action id="com.example.demo_plugin.RunMenuAction"
+                class="com.example.demo_plugin.main_menu.RunMenuAction"
+                text="(Rodrigo) Run Menu Action"
+                description="Action in Run menu">
+            <add-to-group group-id="RunMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Tools Menu - External tools and utilities -->
+        <action id="org.example.demo_plugin.ToolsMenuAction"
+                class="org.example.demo_plugin.main_menu.ToolsMenuAction"
+                text="(Rodrigo) Tools Menu Action"
+                description="Action in Tools menu">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <!-- VCS/Git Menu - Version control operations like Commit, Push, Pull -->
+        <action id="com.example.demo_plugin.VcsGroupAction"
+                class="com.example.demo_plugin.main_menu.VcsGroupAction"
+                text="(Rodrigo) VCS Menu Action"
+                description="Action in VCS/Git menu">
+            <add-to-group group-id="VcsGroups" anchor="last"/>
+        </action>
+
+
+        <!-- Window Menu - Window management operations -->
+        <action id="com.example.demo_plugin.WindowMenuAction"
+                class="com.example.demo_plugin.main_menu.WindowMenuAction"
+                text="(Rodrigo) Window Menu Action"
+                description="Action in Window menu">
+            <add-to-group group-id="WindowMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Help Menu - Help and about information -->
+        <action id="com.example.demo_plugin.HelpMenuAction"
+                class="com.example.demo_plugin.main_menu.HelpMenuAction"
+                text="(Rodrigo) Help Menu Action"
+                description="Action in Help menu">
+            <add-to-group group-id="HelpMenu" anchor="last"/>
+        </action>
+
+
+        <!-- ========== CONTEXT MENU GROUPS ========== -->
+
+        <!-- Editor Context Menu - Right-click menu in code editor -->
+        <action id="com.example.demo_plugin.EditorPopupMenuAction"
+                class="com.example.demo_plugin.context.EditorPopupMenuAction"
+                text="(Rodrigo) Editor Context Action"
+                description="Action in editor right-click menu">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Project View Context Menu - Right-click menu in project tree -->
+        <action id="com.example.demo_plugin.ProjectViewPopupMenuAction"
+                class="com.example.demo_plugin.context.ProjectViewPopupMenuAction"
+                text="(Rodrigo) Project View Context Action"
+                description="Action in project view right-click menu">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </action>
+
+
+        <!-- Editor Tab Context Menu - Right-click menu on editor tabs -->
+        <action id="com.example.demo_plugin.EditorTabPopupMenuAction"
+                class="com.example.demo_plugin.context.EditorTabPopupMenuAction"
+                text="(Rodrigo) Editor Tab Context Action"
+                description="Action in editor tab right-click menu">
+            <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
+        </action>
+
+        <!-- Console Context Menu - Right-click menu in console window -->
+        <action id="com.example.demo_plugin.ConsoleEditorPopupMenuAction"
+                class="com.example.demo_plugin.context.ConsoleEditorPopupMenuAction"
+                text="(Rodrigo) Console Context Action"
+                description="Action in console right-click menu">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
+        </action>
+
+        <!-- Favorites Context Menu - Right-click menu in Favorites view -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.FavoritesPopupMenuAction"
+                class="com.example.demo_plugin.context.ShowMessageAction"
+                text="Favorites Context Action"
+                description="Action in favorites right-click menu">
+            <add-to-group group-id="FavoritesPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- Structure View Context Menu - Right-click menu in Structure view -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.StructureViewPopupMenuAction"
+                class="com.example.demo_plugin.context.ShowMessageAction"
+                text="Structure View Context Action"
+                description="Action in structure view right-click menu">
+            <add-to-group group-id="StructureViewPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== TOOLBAR GROUPS ========== -->
+
+        <!-- Main Toolbar - Top toolbar with common actions -->
+        <!-- NOT WORKING -->
+        <action id="com.example.demo_plugin.MainToolBarAction"
+                class="com.example.demo_plugin.toolbar.MainToolBarAction"
+                text="(Rodrigo) Main Toolbar Action"
+                description="Action in main toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="MainToolBar" anchor="last"/>
+        </action>
+
+        <!-- Navigation Bar Toolbar - Toolbar in navigation bar -->
+        <action id="com.example.demo_plugin.NavBarToolBarAction"
+                class="com.example.demo_plugin.toolbar.NavBarToolBarAction"
+                text="(Rodrigo) NavBar Toolbar Action"
+                description="Action in navigation bar toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="NavBarToolBar" anchor="last"/>
+        </action>
+
+        <!-- Editor Gutter Menu - Left margin gutter context menu -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.EditorGutterPopupMenuAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Gutter Context Action"
+                description="Action in editor gutter right-click menu">
+            <add-to-group group-id="EditorGutterPopupMenu" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== SUBMENU GROUPS ========== -->
+
+        <!-- New Submenu - File > New submenu for creating new files -->
+        <action id="com.example.demo_plugin.NewGroupAction"
+                class="com.example.demo_plugin.submenu.NewGroupAction"
+                text="(Rodrigo) New Custom File"
+                description="Action in File > New submenu">
+            <add-to-group group-id="NewGroup" anchor="last"/>
+        </action>
+
+        <!-- Open Editor Submenu - File > Open submenu -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.OpenEditorGroupAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Open Custom Editor"
+                description="Action in File > Open submenu">
+            <add-to-group group-id="OpenEditorGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- Generate Submenu - Code > Generate submenu -->
+        <action id="com.example.demo_plugin.GenerateGroupAction"
+                class="com.example.demo_plugin.submenu.ShowMessageAction"
+                text="(Rodrigo) Generate Custom Code"
+                description="Action in Code > Generate submenu">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <!-- Introduce Submenu - Refactor > Introduce submenu -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.IntroduceActionsGroupAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Introduce Custom"
+                description="Action in Refactor > Introduce submenu">
+            <add-to-group group-id="IntroduceActionsGroup" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== GIT/VCS SPECIFIC GROUPS ========== -->
+
+        <!-- Git File Actions - Git context menu for files -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.GitFileActionsAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Custom Git File Action"
+                description="Action in Git file context menu">
+            <add-to-group group-id="GitFileActions" anchor="last"/>
+        </action>
+        -->
+
+        <!-- Git Repository Actions - Git menu repository level actions -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.GitRepositoryActionsAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Custom Git Repository Action"
+                description="Action in Git repository menu">
+            <add-to-group group-id="GitRepositoryActions" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== SPECIAL GROUPS ========== -->
+
+        <!-- Search Everywhere Toolbar - Toolbar in Search Everywhere dialog -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.SearchEverywhereToolbarAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Search Action"
+                description="Action in Search Everywhere toolbar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="SearchEverywhereToolbar" anchor="last"/>
+        </action>
+        -->
+
+        <!-- Touch Bar (macOS only) - MacBook Pro Touch Bar -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.TouchBarDefaultAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Touch Bar Action"
+                description="Action in MacBook Touch Bar"
+                icon="AllIcons.General.Information">
+            <add-to-group group-id="TouchBarDefault" anchor="last"/>
+        </action>
+        -->
+
+        <!-- ========== ANCHOR EXAMPLES ========== -->
+
+        <!-- First Position - Action appears at the beginning of the group -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.FirstAnchorAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="First Position Action"
+                description="This appears at the beginning">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+        -->
+
+        <!-- After Specific Action - Appears after a specific action -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.AfterAnchorAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="After Specific Action"
+                description="This appears after External Tools">
+            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="ExternalToolsGroup"/>
+        </action>
+        -->
+
+        <!-- Before Specific Action - Appears before a specific action -->
+        <!-- NOT FOUND
+        <action id="com.example.demo_plugin.BeforeAnchorAction"
+                class="com.example.demo_plugin.tools.ShowMessageAction"
+                text="Before Specific Action"
+                description="This appears before External Tools">
+            <add-to-group group-id="ToolsMenu" anchor="before" relative-to-action="ExternalToolsGroup"/>
+        </action>
+        -->
+    </actions>
+</idea-plugin>
