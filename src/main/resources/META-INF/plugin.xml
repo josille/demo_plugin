@@ -225,16 +225,6 @@
 
         <!-- ========== TOOLBAR GROUPS ========== -->
 
-        <!-- Main Toolbar - Top toolbar with common actions  (OldUI) -->
-        <!-- NOT WORKING OLD UI -->
-        <action id="org.example.demo_plugin.MainToolBarAction"
-                class="org.example.demo_plugin.toolbar.MainToolBarAction"
-                text="(Rodrigo) Main Toolbar Action"
-                description="Action in main toolbar"
-                icon="AllIcons.General.Information">
-            <add-to-group group-id="MainToolBar" anchor="last"/>
-        </action>
-
         <!-- Main Toolbar - Top toolbar with common actions Left -->
         <action id="org.example.demo_plugin.MainToolbarLeftAction"
                 class="org.example.demo_plugin.toolbar.MainToolbarLeftAction"
@@ -271,27 +261,6 @@
                 icon="AllIcons.General.Information">
             <add-to-group group-id="NavBarToolBar" anchor="last"/>
         </action>
-
-        <!-- todo: Run widget toolbar (old UI) -->
-        <!--
-        <action id="org.example.demo_plugin.ToolbarRunGroupAction"
-                class="org.example.demo_plugin.toolbar.ToolbarRunGroupAction"
-                text="(Rodrigo) Toolbar Run Action"
-                description="Action in run widget toolbar (old UI)"
-                icon="AllIcons.General.Information">
-            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
-        </action>
-        -->
-
-        <!-- Editor Gutter Menu - Left margin gutter context menu -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.EditorGutterPopupMenuAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Gutter Context Action"
-                description="Action in editor gutter right-click menu">
-            <add-to-group group-id="EditorGutterPopupMenu" anchor="last"/>
-        </action>
-        -->
 
         <!-- ========== SUBMENU GROUPS (Additional Context Menus) ========== -->
 
