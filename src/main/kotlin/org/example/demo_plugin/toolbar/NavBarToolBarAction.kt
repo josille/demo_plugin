@@ -1,4 +1,4 @@
-package com.example.demo_plugin.toolbar
+package org.example.demo_plugin.toolbar
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

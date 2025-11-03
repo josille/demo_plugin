@@ -1,4 +1,4 @@
-package com.example.demo_plugin.submenu
+package org.example.demo_plugin.submenu
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent

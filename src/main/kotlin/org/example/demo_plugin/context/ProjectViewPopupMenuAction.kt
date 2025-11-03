@@ -1,4 +1,4 @@
-package com.example.demo_plugin.context
+package org.example.demo_plugin.context
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
