@@ -164,15 +164,14 @@
         </action>
 
 
-        <!-- todo: Go To submenu in editor context menu -->
-        <!--
+        <!-- Editor Context Menu - Right-click menu in code editor - Go To section -->
         <action id="org.example.demo_plugin.EditorPopupMenuGoToAction"
                 class="org.example.demo_plugin.context.EditorPopupMenuGoToAction"
                 text="(Rodrigo) Editor GoTo Context Action"
                 description="Action in editor right-click menu - GoTo submenu">
             <add-to-group group-id="EditorPopupMenu.GoTo" anchor="last"/>
         </action>
-        -->
+
 
         <!-- Editor Tab Context Menu - Right-click menu on editor tabs -->
         <action id="org.example.demo_plugin.EditorTabPopupMenuAction"
@@ -189,26 +188,6 @@
                 description="Action in console right-click menu">
             <add-to-group group-id="ConsoleEditorPopupMenu" anchor="last"/>
         </action>
-
-        <!-- Favorites Context Menu - Right-click menu in Favorites view -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.FavoritesPopupMenuAction"
-                class="org.example.demo_plugin.context.ShowMessageAction"
-                text="Favorites Context Action"
-                description="Action in favorites right-click menu">
-            <add-to-group group-id="FavoritesPopupMenu" anchor="last"/>
-        </action>
-        -->
-
-        <!-- Structure View Context Menu - Right-click menu in Structure view -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.StructureViewPopupMenuAction"
-                class="org.example.demo_plugin.context.ShowMessageAction"
-                text="Structure View Context Action"
-                description="Action in structure view right-click menu">
-            <add-to-group group-id="StructureViewPopupMenu" anchor="last"/>
-        </action>
-        -->
 
         <!-- ========== PROJECT VIEW CONTEXT MENU GROUPS ========== -->
 
