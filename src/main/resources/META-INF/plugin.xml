@@ -272,67 +272,85 @@
             <add-to-group group-id="NewGroup" anchor="last"/>
         </action>
 
-        <!-- todo: CutCopyPasteGroup - Cut/Copy/Paste group -->
-        <!--
+        <!-- New Submenu - Edit > Action in Cut/Copy/Paste group -->
         <action id="org.example.demo_plugin.CutCopyPasteGroupAction"
                 class="org.example.demo_plugin.submenu.CutCopyPasteGroupAction"
                 text="(Rodrigo) Cut/Copy/Paste Action"
                 description="Action in Cut/Copy/Paste group">
             <add-to-group group-id="CutCopyPasteGroup" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: StructureViewPopupMenu - Structure view context menu -->
         <!--
+         Option 1: Using Keyboard Shortcut
+            Open File → Alt + 7 (or Cmd + 7 on macOS) → Right-click on any element → (Rodrigo) Structure View Action
+         Option 2: Using Main Menu
+            View → Tool Windows → Structure → Right-click on any element → (Rodrigo) Structure View Action
+         Option 3: Using Tool Window Button
+            Structure Tool Window Button (left sidebar) → Right-click on any element → (Rodrigo) Structure View Action
+         -->
         <action id="org.example.demo_plugin.StructureViewPopupMenuAction"
                 class="org.example.demo_plugin.submenu.StructureViewPopupMenuAction"
                 text="(Rodrigo) Structure View Action"
                 description="Action in structure view context menu">
             <add-to-group group-id="StructureViewPopupMenu" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: Diff.EditorPopupMenu - Diff editor context menu -->
         <!--
+         Diff editor context menu
+        Right-click in Diff Editor > DiffEditorPopupMenuAction Demo Plugin - Welcome
+        -->
         <action id="org.example.demo_plugin.DiffEditorPopupMenuAction"
                 class="org.example.demo_plugin.submenu.DiffEditorPopupMenuAction"
                 text="(Rodrigo) Diff Editor Action"
                 description="Action in diff editor context menu">
             <add-to-group group-id="Diff.EditorPopupMenu" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: Diff.EditorGutterPopupMenu - Diff editor gutter context menu -->
         <!--
+        Diff editor gutter context menu
+
+        To find this action in IntelliJ IDEA:
+        1. Open a diff view by comparing two files or viewing version control changes
+        2. Right-click in the gutter area (line numbers) of the diff editor
+        3. Look for the "DiffEditorGutterPopupMenuAction" entry in the context menu
+
+        -->
         <action id="org.example.demo_plugin.DiffEditorGutterPopupMenuAction"
                 class="org.example.demo_plugin.submenu.DiffEditorGutterPopupMenuAction"
                 text="(Rodrigo) Diff Editor Gutter Action"
                 description="Action in diff editor gutter context menu">
             <add-to-group group-id="Diff.EditorGutterPopupMenu" anchor="last"/>
         </action>
-        -->
 
-        <!-- todo: Diff.ViewerPopupMenu - Diff viewer context menu -->
+
         <!--
+         Diff viewer context menu
+
+         Steps to find this action:
+         VCS → Show Diff (or Compare With...) → Right-click in diff viewer panel → (Rodrigo) Diff Viewer Action
+
+        TODO: test again
+         -->
         <action id="org.example.demo_plugin.DiffViewerPopupMenuAction"
                 class="org.example.demo_plugin.submenu.DiffViewerPopupMenuAction"
                 text="(Rodrigo) Diff Viewer Action"
                 description="Action in diff viewer context menu">
             <add-to-group group-id="Diff.ViewerPopupMenu" anchor="last"/>
         </action>
-        -->
 
-        <!-- Open Editor Submenu - File > Open submenu -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.OpenEditorGroupAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Open Custom Editor"
-                description="Action in File > Open submenu">
-            <add-to-group group-id="OpenEditorGroup" anchor="last"/>
-        </action>
-        -->
+        <!--
+        Generate Submenu - Code > Generate submenu
+         Steps to find this action in IntelliJ IDEA UI:
 
-        <!-- Generate Submenu - Code > Generate submenu -->
+          Option 1: From Editor Context Menu
+          Right-click in editor → Generate... → (Rodrigo) Generate Custom Code
+
+          Option 2: From Main Menu
+          Code → Generate... → (Rodrigo) Generate Custom Code
+
+          Option 3: Using Keyboard Shortcut
+          Alt+Insert (or Cmd+N on macOS) in editor → (Rodrigo) Generate Custom Code
+        -->
         <action id="org.example.demo_plugin.GenerateGroupAction"
                 class="org.example.demo_plugin.submenu.ShowMessageAction"
                 text="(Rodrigo) Generate Custom Code"
@@ -340,105 +358,20 @@
             <add-to-group group-id="GenerateGroup" anchor="last"/>
         </action>
 
-        <!-- Introduce Submenu - Refactor > Introduce submenu -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.IntroduceActionsGroupAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Introduce Custom"
-                description="Action in Refactor > Introduce submenu">
-            <add-to-group group-id="IntroduceActionsGroup" anchor="last"/>
-        </action>
-        -->
-
-        <!-- ========== GIT/VCS SPECIFIC GROUPS ========== -->
-
-        <!-- Git File Actions - Git context menu for files -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.GitFileActionsAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Custom Git File Action"
-                description="Action in Git file context menu">
-            <add-to-group group-id="GitFileActions" anchor="last"/>
-        </action>
-        -->
-
-        <!-- Git Repository Actions - Git menu repository level actions -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.GitRepositoryActionsAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Custom Git Repository Action"
-                description="Action in Git repository menu">
-            <add-to-group group-id="GitRepositoryActions" anchor="last"/>
-        </action>
-        -->
-
-        <!-- ========== SPECIAL GROUPS ========== -->
-
-        <!-- Search Everywhere Toolbar - Toolbar in Search Everywhere dialog -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.SearchEverywhereToolbarAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Search Action"
-                description="Action in Search Everywhere toolbar"
-                icon="AllIcons.General.Information">
-            <add-to-group group-id="SearchEverywhereToolbar" anchor="last"/>
-        </action>
-        -->
-
-        <!-- Touch Bar (macOS only) - MacBook Pro Touch Bar -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.TouchBarDefaultAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Touch Bar Action"
-                description="Action in MacBook Touch Bar"
-                icon="AllIcons.General.Information">
-            <add-to-group group-id="TouchBarDefault" anchor="last"/>
-        </action>
-        -->
-
-        <!-- ========== ANCHOR EXAMPLES ========== -->
-
-        <!-- First Position - Action appears at the beginning of the group -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.FirstAnchorAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="First Position Action"
-                description="This appears at the beginning">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-        </action>
-        -->
-
-        <!-- After Specific Action - Appears after a specific action -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.AfterAnchorAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="After Specific Action"
-                description="This appears after External Tools">
-            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="ExternalToolsGroup"/>
-        </action>
-        -->
-
-        <!-- Before Specific Action - Appears before a specific action -->
-        <!-- NOT FOUND
-        <action id="org.example.demo_plugin.BeforeAnchorAction"
-                class="org.example.demo_plugin.tools.ShowMessageAction"
-                text="Before Specific Action"
-                description="This appears before External Tools">
-            <add-to-group group-id="ToolsMenu" anchor="before" relative-to-action="ExternalToolsGroup"/>
-        </action>
-        -->
-
         <!-- ========== Tool Window Menus ========== -->
 
-        <!-- todo: ChangesViewPopupMenu - Changes view (VCS) context menu -->
         <!--
+         Changes view (VCS) context menu
+
+        View → Tool Windows → Git → Navigate to "Local Changes" or "Commit" tab → Right-click on any file → Look for "(Rodrigo) Changes View Action"
+        -->
         <action id="org.example.demo_plugin.ChangesViewPopupMenuAction"
                 class="org.example.demo_plugin.toolwindow.ChangesViewPopupMenuAction"
                 text="(Rodrigo) Changes View Action"
                 description="Action in changes view context menu">
             <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
         </action>
-        -->
+
 
         <!-- todo: ChangesView.AddUnversioned - Add unversioned files in Changes view -->
         <!--
