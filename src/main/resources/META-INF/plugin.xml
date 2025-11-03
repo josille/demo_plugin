@@ -26,15 +26,18 @@
     <actions>
         <!-- ========== MAIN MENU GROUPS ========== -->
 
-        <!-- File Menu - Common file operations like New, Open, Save, Close -->
-<!-- todo
-        <action id="com.example.demo_plugin.MainMenuAction"
-                class="com.example.demo_plugin.main_menu.FileMenuAction"
-                text="(Rodrigo) Main Menu Action"
-                description="Action in Main menu">
+        <!-- New Main Menu - Create anew Group Main Menu and add an action isnide -->
+        <group id="com.example.demo_plugin.MyCustomMenu"
+               text="(Rodrigo) Custom Menu"
+               description="My custom menu"
+               popup="true">
             <add-to-group group-id="MainMenu" anchor="last"/>
-        </action>
-        -->
+
+            <action id="com.example.demo_plugin.MainMenuAction"
+                    class="com.example.demo_plugin.main_menu.MainMenuAction"
+                    text="Main Menu Action"
+                    description="Action in custom menu"/>
+        </group>
 
         <!-- File Menu - Common file operations like New, Open, Save, Close -->
         <action id="com.example.demo_plugin.FileMenuAction"
