@@ -12,40 +12,55 @@
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
-    <description>Demo plugint to show all locatiosn for plgins</description>
+    <description>Demo plugin to show all location for plgins</description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
     <!-- Extension points defined by the plugin.
-         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+        Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html
+        Register your implementations for IntelliJ Platform extension points (EPs) so the IDE can call into your code at certain moments. Mostly infrastructure/integration; not necessarily visible in the UI.
+            - Lifecycle/usage: Loaded and used by the platform when the corresponding feature runs (indexing, completion, inspections, settings pages, services, listeners, etc.). Not inherently tied to UI.
+    -->
     <extensions defaultExtensionNs="com.intellij">
-
+        <!-- Register the settings page -->
+        <projectConfigurable
+                parentId="tools"
+                instance="org.example.demo_plugin.settings.SettingsConfigurable"
+                id="org.example.demo_plugin.settings.SettingsConfigurable"
+                displayName="(Rodrigo) Panel Settings"
+                nonDefaultProject="true"/>
     </extensions>
+
+    <!-- An action is a class derived from AnAction, whose actionPerformed() method is called when its menu item or toolbar button is selected.
+        Read mode: https://plugins.jetbrains.com/docs/intellij/plugin-actions.html
+        User-invokable commands (subclasses of AnAction) that you place in menus, toolbars, popups, and bind to shortcuts.
+        - Lifecycle/usage: Displayed in UI groups; executed in response to user gestures (menu click, toolbar button, keymap shortcut, search Everywhere).
+    -->
     <actions>
         <!-- ========== MAIN MENU GROUPS ========== -->
 
-        <!-- New Main Menu - Create anew Group Main Menu and add an action isnide -->
-        <group id="org.example.demo_plugin.MyCustomMenu"
-               text="(Rodrigo) Custom Menu"
-               description="My custom menu"
-               popup="true">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-
-            <action id="org.example.demo_plugin.MainMenuAction"
-                    class="org.example.demo_plugin.main_menu.MainMenuAction"
-                    text="Main Menu Action"
-                    description="Action in custom menu"/>
-        </group>
-
-        <!-- File Menu - Common file operations like New, Open, Save, Close -->
+       <!-- File Menu - Common file operations like New, Open, Save, Close -->
         <action id="org.example.demo_plugin.FileMenuAction"
                 class="org.example.demo_plugin.main_menu.FileMenuAction"
                 text="(Rodrigo) File Menu Action"
                 description="Action in File menu">
             <add-to-group group-id="FileMenu" anchor="last"/>
         </action>
+
+        <!-- New Main Menu - Create a new Group Main Menu and add an action isnide -->
+        <group id="org.example.demo_plugin.MyCustomMenu"
+               text="(Rodrigo) Custom Menu"
+               description="My custom menu"
+               popup="true">
+            <add-to-group group-id="MainMenu" anchor="first"/>
+
+            <action id="org.example.demo_plugin.MainMenuAction"
+                    class="org.example.demo_plugin.main_menu.MainMenuAction"
+                    text="Main Menu Action"
+                    description="Action in custom menu"/>
+        </group>
 
 
         <!-- Edit Menu - Text editing operations like Cut, Copy, Paste, Find -->
@@ -373,25 +388,37 @@
         </action>
 
 
-        <!-- todo: ChangesView.AddUnversioned - Add unversioned files in Changes view -->
         <!--
+        Add unversioned files in Changes view
+
+        Commit Tool Window →  Unversioned Files section → Right-click on any unversioned file or in the empty space → Your action appears in the context menu
+
+         Main Window →  VCS Menu →  Show Local Changes → Right-click in Changes view → Your action
+         todo: not working
+        -->
         <action id="org.example.demo_plugin.ChangesViewAddUnversionedAction"
                 class="org.example.demo_plugin.toolwindow.ChangesViewAddUnversionedAction"
                 text="(Rodrigo) Changes View Add Unversioned Action"
                 description="Action for adding unversioned files in changes view">
             <add-to-group group-id="ChangesView.AddUnversioned" anchor="last"/>
         </action>
+
+        <!-- File history context menu
+        Open a file in the editor
+        Right-click anywhere in the editor
+        Select Git → Show History for Selection
+        In the File History window that opens, right-click on a commit
+
+        todo: not working
         -->
 
-        <!-- todo: Vcs.FileHistory.ContextMenu - File history context menu -->
-        <!--
         <action id="org.example.demo_plugin.VcsFileHistoryContextMenuAction"
                 class="org.example.demo_plugin.toolwindow.VcsFileHistoryContextMenuAction"
                 text="(Rodrigo) VCS File History Action"
                 description="Action in VCS file history context menu">
             <add-to-group group-id="Vcs.FileHistory.ContextMenu" anchor="last"/>
         </action>
-        -->
+
 
         <!-- todo: Vcs.Log.ContextMenu - VCS log context menu -->
         <!--
