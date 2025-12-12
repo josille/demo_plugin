@@ -21,8 +21,7 @@
     <!-- Extension points defined by the plugin.
         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html
         Register your implementations for IntelliJ Platform extension points (EPs) so the IDE can call into your code at certain moments. Mostly infrastructure/integration; not necessarily visible in the UI.
-            - Lifecycle/usage: Loaded and used by the platform when the corresponding feature runs (indexing, completion, inspections, settings pages, services, listeners, etc.). Not inherently tied to UI.
-    -->
+            - Lifecycle/usage: Loaded and used by the platform when the corresponding feature runs (indexing, completion, inspections, settings pages, services, listeners, etc.). Not inherently tied to UI.    -->
     <extensions defaultExtensionNs="com.intellij">
         <!-- Register the settings page -->
         <projectConfigurable
@@ -36,8 +35,7 @@
     <!-- An action is a class derived from AnAction, whose actionPerformed() method is called when its menu item or toolbar button is selected.
         Read mode: https://plugins.jetbrains.com/docs/intellij/plugin-actions.html
         User-invokable commands (subclasses of AnAction) that you place in menus, toolbars, popups, and bind to shortcuts.
-        - Lifecycle/usage: Displayed in UI groups; executed in response to user gestures (menu click, toolbar button, keymap shortcut, search Everywhere).
-    -->
+        - Lifecycle/usage: Displayed in UI groups; executed in response to user gestures (menu click, toolbar button, keymap shortcut, search Everywhere).    -->
     <actions>
         <!-- ========== MAIN MENU GROUPS ========== -->
 
