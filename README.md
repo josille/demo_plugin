@@ -66,7 +66,3 @@ FAQ
   - UI visibility:
     - Extensions: Usually none (unless the EP is for UI, e.g., settings page, tool window).
     - Actions: Visible entries/buttons and searchable commands.
-
-License
--------
-This demo is intended for educational/reference purposes. Add your preferred license terms here if you plan to redistribute.
