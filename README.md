@@ -66,3 +66,62 @@ FAQ
   - UI visibility:
     - Extensions: Usually none (unless the EP is for UI, e.g., settings page, tool window).
     - Actions: Visible entries/buttons and searchable commands.
+
+## Extension VS Action
+
+In an IntelliJ Platform plugin, **an *action*** and **an *extension element*** are two different ways you “plug into” the IDE:
+
+- **Action** = something the *user triggers* (a command).
+- **Extension element** = something the *platform discovers and uses* (a contribution to IDE behavior).
+
+## 1) Action (user-invoked command)
+
+An **action** is a class (usually extending `AnAction`) that the IDE can invoke in response to a UI event:
+
+- user clicks a menu item / toolbar button
+- user presses a keymap shortcut
+- user uses *Find Action* (`⇧⌘A` on macOS) and runs it
+
+Key points:
+- Has explicit lifecycle hooks like `actionPerformed()` (what it does) and often `update()` (enable/disable, change text, etc.).
+- Must be **registered** (typically in `plugin.xml` under `<actions>`) and optionally **placed** into menus/toolbars and assigned shortcuts.
+- Conceptually: *“Here is a command the user can run.”*
+
+Typical examples:
+- “Generate Something…”
+- “Reformat with My Rules”
+- “Open Custom Tool Window”
+
+## 2) Extension element (platform-invoked contribution)
+
+An **extension element** is an entry in `plugin.xml` that registers an implementation for an **extension point** (EP) defined by the IntelliJ Platform (or another plugin). The platform loads it and calls it as part of normal IDE operation.
+
+Key points:
+- The IDE is the one that decides *when/if* to use it.
+- It typically wires your implementation into some subsystem: inspections, annotators, completion providers, tool windows, project wizards, VCS integration, etc.
+- Registered under `<extensions defaultExtensionNs="com.intellij"> ... </extensions>` (or another namespace).
+- Conceptually: *“When the IDE needs X, here’s my implementation of X.”*
+
+Typical examples:
+- `com.intellij.toolWindow` → add a tool window
+- `com.intellij.localInspection` → add an inspection
+- `com.intellij.annotator` → add highlighting/annotations
+- `com.intellij.completion.contributor` → add code completion
+
+## The relationship between them
+
+They often **work together**:
+
+- An **extension** might integrate your feature into the editor (e.g., an inspection detects a problem).
+- An **action** might be used as the fix/command (e.g., “Apply Quick Fix” or “Run My Formatter”).
+
+But they’re not the same thing:
+- You can have an action with no extensions (pure command).
+- You can have extensions with no actions (pure background integration).
+
+## Quick mental model
+
+- **Action:** “User asks the IDE to do something now.”
+- **Extension element:** “IDE asks plugins for participants/providers to implement behavior.”
+
+If you tell me what kind of feature you’re building (menu command, editor highlighting, completion, tool window, etc.), I can point to the most appropriate extension points vs. action registrations for it.
