@@ -63,20 +63,7 @@ class SettingsComponent {
      * - Used to persist and restore the organization name as part of the settings workflow.
      */
     private val organizationNameField = JBTextField()
-    /**
-     * A text input field for entering the name of a space.
-     *
-     * Responsibilities:
-     * - Captures and displays the user-provided space name as a text value.
-     * - Serves as one of the input fields in the plugin's settings UI, managed by [SettingsComponent].
-     *
-     * Usage Context:
-     * - Incorporated into the settings dialog to allow users to configure the space name.
-     *
-     * Default Behavior:
-     * - Initialized as an empty text field.
-     */
-    private val spaceNameField = JBTextField()
+
 
     /**
      * A JPanel instance representing the visual container for the settings UI components.
@@ -106,7 +93,6 @@ class SettingsComponent {
     val panel: JPanel = FormBuilder.createFormBuilder()
         .addLabeledComponent(JBLabel("API Key:"), apiKeyField, 1, false)
         .addLabeledComponent(JBLabel("Organization Name:"), organizationNameField, 1, false)
-        .addLabeledComponent(JBLabel("Space Name:"), spaceNameField, 1, false)
         .addComponentFillVertically(JPanel(), 0)
         .panel
 
@@ -139,22 +125,6 @@ class SettingsComponent {
         get() = organizationNameField.text
         set(value) {
             organizationNameField.text = value
-        }
-
-    /**
-     * Represents the name of the space entered by the user in the settings UI.
-     *
-     * This property provides access to the text value of the space name field,
-     * enabling retrieval and updates via its getter and setter.
-     *
-     * Usage Context:
-     * - Used within the `SettingsComponent` class to manage the value of the "Space Name" input field.
-     * - Can be integrated into the plugin's settings management processes to store and retrieve space-related information.
-     */
-    var spaceName: String
-        get() = spaceNameField.text
-        set(value) {
-            spaceNameField.text = value
         }
 
     /**

@@ -11,9 +11,9 @@ import javax.swing.JComponent
  *
  * Responsibilities:
  * - Create and dispose the Swing UI defined by [SettingsComponent].
- * - Read persisted values from [YOURCLASS] and populate the UI (see [reset]).
+ * - Read persisted values from [SettingsState] and populate the UI (see [reset]).
  * - Detect user changes (see [isModified]).
- * - Persist the updated values back to [YOURCLASS] (see [apply]).
+ * - Persist the updated values back to [SettingsState] (see [apply]).
  *
  * Lifecycle notes:
  * - [createComponent] is called lazily by the IDE when the settings page is opened.
@@ -22,11 +22,9 @@ import javax.swing.JComponent
  * - [apply] is invoked when the user clicks Apply/OK.
  * - [disposeUIResources] must release Swing references to avoid memory leaks.
  *
- * Threading:
- * All methods here are called on the EDT by the IDE. Avoid blocking operations.
  *
  * @param project the project whose settings are being edited; used to access
- * [YOURCLASS] which is registered as a project-level service.
+ * [SettingsState] which is registered as a project-level service.
  */
 class SettingsConfigurable(private val project: Project) : Configurable {
 
@@ -58,28 +56,53 @@ class SettingsConfigurable(private val project: Project) : Configurable {
         return settingsComponent?.panel
     }
 
+
     /**
-     * Compares values currently shown in the UI with the persisted state to
-     * determine whether there are unsaved changes.
+     * Checks if the settings have been modified by comparing the current state
+     * of the settings UI components with the persisted settings state.
+     *
+     * @return true if the current settings differ from the saved state, false otherwise
      */
     override fun isModified(): Boolean {
+        val settings = SettingsState.getInstance(project).state
         val component = settingsComponent ?: return false
-        return true
+
+        return component.apiKey != settings.apiKey ||
+                component.organizationName != settings.organizationName
     }
 
     /**
-     * Persists the values currently entered by the user into the project-level
+     * Saves the current state of the settings from the UI components into the persistent storage.
+     *
+     * This method retrieves the singleton instance of the settings state for the current project
+     * and updates its properties with the values provided by the `settingsComponent`, if available.
+     * Specifically, it updates the API key and organization name in the settings state.
+     *
+     * If the `settingsComponent` is null, the method does nothing.
      */
     override fun apply() {
+        val settings = SettingsState.getInstance(project)
         val component = settingsComponent ?: return
+
+        settings.state.apiKey = component.apiKey
+        settings.state.organizationName = component.organizationName
     }
 
     /**
-     * Resets the UI to reflect the currently persisted state. This is called
-     * when the page is opened and when the user presses the Reset link.
+     * Restores the settings UI components to their last persisted state.
+     *
+     * This method retrieves the current settings state for the project using the `SettingsState` singleton
+     * and updates the `settingsComponent` (if not null) with the persisted values of `apiKey`
+     * and `organizationName`.
+     *
+     * If the `settingsComponent` is null, no action is taken.
      */
     override fun reset() {
+        val settings = SettingsState.getInstance(project).state
         val component = settingsComponent ?: return
+
+        component.apiKey = settings.apiKey
+        component.organizationName = settings.organizationName
     }
 
     /**
