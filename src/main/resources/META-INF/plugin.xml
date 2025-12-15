@@ -27,6 +27,8 @@
             - Lifecycle/usage: Loaded and used by the platform when the corresponding feature runs (indexing, completion, inspections, settings pages, services, listeners, etc.). Not inherently tied to UI.    -->
     <extensions defaultExtensionNs="com.intellij">
         <!-- Register the settings page -->
+        <!-- nonDefaultProject: IntelliJ has a special Default Project that serves as a template for new projects.
+        With this set to true, your settings page shows only for “real” projects, not when editing Default Project settings.-->
         <projectConfigurable
                 parentId="tools"
                 instance="org.example.demo_plugin.settings.SettingsConfigurable"
@@ -404,7 +406,7 @@
                 class="org.example.demo_plugin.toolwindow.ChangesViewAddUnversionedAction"
                 text="(Rodrigo) Changes View Add Unversioned Action"
                 description="Action for adding unversioned files in changes view">
-            <add-to-group group-id="ChangesView.AddUnversioned" anchor="last"/>
+            <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
         </action>
 
         <!-- File history context menu
