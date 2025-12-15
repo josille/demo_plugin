@@ -119,7 +119,7 @@ But they’re not the same thing:
 - You can have an action with no extensions (pure command).
 - You can have extensions with no actions (pure background integration).
 
-## Quick mental model
+### Quick mental model
 
 - **Action:** “User asks the IDE to do something now.”
 - **Extension element:** “IDE asks plugins for participants/providers to implement behavior.”
